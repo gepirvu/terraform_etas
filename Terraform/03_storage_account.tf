@@ -164,6 +164,14 @@ resource "azurerm_role_assignment" "adf2rsg" {
   ]
 }
 
+resource "azurerm_role_assignment" "sp2rsg" {
+  role_definition_name  = "Storage Blob Data Contributor"
+  principal_id          = var.SP_CLIENT_ID
+  scope                 = "/subscriptions/${data.azurerm_subscription.subscription.subscription_id}/resourceGroups/${azurerm_resource_group.etas_poc_rg.name}"
+  depends_on = [
+    azurerm_data_factory.adf_ws
+  ]
+}
 
 
 #Create containers and datalake paths
