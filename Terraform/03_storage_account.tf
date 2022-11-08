@@ -21,7 +21,7 @@ resource "azurerm_storage_account_network_rules" "firewall_rules" {
 
   default_action             = "Deny"
   ip_rules                   = [var.ip_range]
-  virtual_network_subnet_ids = virtual_network_subnet_ids = [azurerm_subnet.backend_subnet.id, azurerm_subnet.frontend_subnet.id, azurerm_subnet.adbprv_subnet.id, azurerm_subnet.adbpub_subnet.id ]
+  virtual_network_subnet_ids = [azurerm_subnet.backend_subnet.id, azurerm_subnet.frontend_subnet.id, azurerm_subnet.adbprv_subnet.id, azurerm_subnet.adbpub_subnet.id ]
   bypass                     = ["AzureServices"]
 
   # Set network policies after Workspace has been created (will create File Share Datastore properly)
