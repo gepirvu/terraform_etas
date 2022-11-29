@@ -1,4 +1,4 @@
-# Azure Machine Learning - Private Link for most services deployment
+# Azure Analytics Platform - Terraform Deployment Overview
 
 This Terraform template deploys the following architecture:
 
