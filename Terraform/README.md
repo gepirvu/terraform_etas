@@ -4,17 +4,12 @@ This Terraform template deploys the following architecture:
 
 It includes:
 
-* Azure Machine Learning Workspace with Private Link
-* Azure Storage Account with VNET binding (using Service Endpoints) and Private Link for Blob and File
-* Data Lake
-* Azure Key Vault with VNET binding (using Service Endpoints) and Private Link
-* Azure Container Registry
-* Azure Application Insights
-* Virtual Network
-* Jumphost (Windows) with Bastion for easy access to the VNET
-* Compute Cluster (in VNET)
-* Compute Instance (in VNET)
-* (Azure Kubernetes Service - disabled by default and still under development)
+* Resource group
+* Virtual network and 4 subnets, 2 dedicated for Databricks
+* Azure Storage Account - Data Lake with VNET binding (using Service Endpoints) and Private Link for Blob and File
+* Azure Key Vault with VNET binding (using Service Endpoints) and Private Link + Secrets
+* Azure Data Factory + Linked Services
+* Azure Databricks + Cluster
 
 ## Instructions
 
